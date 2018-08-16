@@ -5,7 +5,7 @@ pipeline {
 
     stages {
         stage('K8s') {
-            echo "testing k8s"
+            echo "Testing"
         }
     }
 }
