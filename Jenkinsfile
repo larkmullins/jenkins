@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker { image 'node:10' }
-    }
+    agent any
 
     stages {
         stage('K8s') {
