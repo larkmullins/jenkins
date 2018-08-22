@@ -1,6 +1,8 @@
 pipeline {
     agent {
-        label 'jenkins'
+        docker {
+            image 'nginx'
+        }
     }
 
     stages {
