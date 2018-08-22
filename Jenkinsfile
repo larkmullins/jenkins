@@ -4,10 +4,16 @@ pipeline {
     }
 
     stages {
-        stage('K8s') {
+        stage('Testing') {
             steps {
                 echo "Testing"
             }
         }
+
+	stage('Deploy') {
+	    steps {
+		echo "Deploy"
+	    }
+	}
     }
 }
