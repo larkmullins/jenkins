@@ -1,12 +1,15 @@
 pipeline {
     agent {
-        docker {
-            image 'nginx'
-        }
+        label 'jenkins'
     }
 
     stages {
         stage('Testing') {
+            agent {
+                docker {
+                    image 'node:8-jessie'
+                }
+            }
             steps {
                 echo "Testing"
             }
