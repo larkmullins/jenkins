@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Testing') {
             steps {
-                container('maven') {
+                container('node') {
                     sh 'npm install -g serverless'
                 }
             }
