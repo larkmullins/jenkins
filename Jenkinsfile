@@ -1,24 +1,19 @@
 pipeline {
-    agent {
-        label 'jenkins-k8s'
-    }
+    agent { label 'jenkins' }
 
     stages {
         stage('Testing') {
-            agent {
-                docker {
-                    image 'nginx'
-                }
-            }
             steps {
-                echo "Testing"
+                kubernetes.pod('nodejs').withImage('nodejs').inside {
+                    sh 'npm install -g serverless'
+                }
             }
         }
 
-	stage('Deploy') {
-	    steps {
-		echo "Deploy"
-	    }
-	}
+        stage('Deploy') {
+            steps {
+                echo "Deploy"
+            }
+        }
     }
 }
