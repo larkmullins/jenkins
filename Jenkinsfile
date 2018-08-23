@@ -1,13 +1,13 @@
 pipeline {
     agent {
-        label 'jenkins'
+        label 'jenkins-k8s'
     }
 
     stages {
         stage('Testing') {
             agent {
                 docker {
-                    image 'node:8-jessie'
+                    image 'nginx'
                 }
             }
             steps {
