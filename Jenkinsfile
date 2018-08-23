@@ -8,12 +8,6 @@ pipeline {
                 ttyEnabled true
                 command 'cat'
             }
-        }
-    }
-
-    agent {
-        kubernetes {
-            label 'k8s-pipeline-php'
             containerTemplate {
                 name 'php'
                 image 'php'
