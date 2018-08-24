@@ -37,6 +37,7 @@ pipeline {
                 container('php') {
                     sh 'php -v'
                 }
+                sh 'tar -zcvf kubernetes-pipeline-artifact.tar.gz Jenkinsfile'
             }
         }
     }
