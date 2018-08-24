@@ -40,4 +40,10 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'Jenkinsfile', fingerprint: true
+        }
+    }
 }
