@@ -13,12 +13,12 @@ pipeline {
                         command 'cat'
                     }
                 }
-                echo "${env.JOB_NAME}"
             }
             steps {
                 container('node') {
                     sh 'npm install -g serverless'
                 }
+                echo "${env.JOB_NAME}"
             }
         }
         
