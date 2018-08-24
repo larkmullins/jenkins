@@ -13,6 +13,7 @@ pipeline {
                         command 'cat'
                     }
                 }
+                echo "${env.JOB_NAME}"
             }
             steps {
                 container('node') {
