@@ -38,14 +38,8 @@ pipeline {
                     sh 'php -v'
                 }
                 sh 'tar -zcvf kubernetes-pipeline-artifact.tar.gz Jenkinsfile'
-                archiveArtifacts artifacts: 'Jenkinsfile', fingerprint: true
+                archiveArtifacts artifacts: 'kubernetes-pipeline-artifact.tar.gz', fingerprint: true
             }
-        }
-    }
-
-    post {
-        always {
-            archiveArtifacts artifacts: 'Jenkinsfile', fingerprint: true
         }
     }
 }
