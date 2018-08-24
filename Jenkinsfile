@@ -38,6 +38,7 @@ pipeline {
                     sh 'php -v'
                 }
                 sh 'tar -zcvf kubernetes-pipeline-artifact.tar.gz Jenkinsfile'
+                archiveArtifacts artifacts: 'Jenkinsfile', fingerprint: true
             }
         }
     }
