@@ -5,7 +5,7 @@ pipeline {
         stage('Initialize') {
             agent {
                 kubernetes {
-                    label 'k8s-pipeline-node'
+                    label "${env.JOB_NAME}-${NODE_NAME}-${BUILD_NUMBER}-node"
                     containerTemplate {
                         name 'node'
                         image 'node:8-jessie'
